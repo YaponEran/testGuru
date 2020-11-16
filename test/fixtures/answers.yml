@@ -2,10 +2,6 @@
 
 one:
   body: MyText
-  result: false
-  question_id: 1
 
 two:
   body: MyText
-  result: false
-  question_id: 1

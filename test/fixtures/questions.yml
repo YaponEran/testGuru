@@ -2,10 +2,6 @@
 
 one:
   body: MyText
-  level: 1
-  test_id: 1
 
 two:
   body: MyText
-  level: 1
-  test_id: 1
