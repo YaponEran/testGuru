@@ -18,20 +18,22 @@ else
     Category.create!(categories)
 end
 
+categories_id = Category.all
+
 #-----------------------------------------------------------
 
 tests = [
-    {title: 'Vikings', level: 1, category: categories[0].id},
-    {title: 'English', level: 2, category: categories[1].id}
+    {title: 'Vikings', level: 1, category: categories_id[0].id},
+    {title: 'English', level: 2, category: categories_id[1].id}
 ]
-
-test_id_val = nil
 
 if Test.exists?
     p 'This tests data is already exist!'
 else
-    test_id_val = Test.create!(tests)
+    Test.create!(tests)
 end
+
+test_id_val = Test.all
 
 #-----------------------------------------------------------
 
@@ -43,20 +45,21 @@ questions = [
     {body: 'What time ___ pick me up?', test: test_id_val[1].id}
 ]
 
-questions_id_val = nil
 
 if Question.exists?
     p 'This test date is alredy exist'
 else
-    questions_id_val = Question.create!(questions)
+    Question.create!(questions)
 end
 
+questions_id_val = Question.all
+
 Answer.create!([
-    {body: 'Canute the Great', question: questions.first},
-    {body: 'Old Norse', question: questions.first},
-    {body: 'do you go', question: questions.last},
-    {body: 'have you got', question: questions.last},
-    {body: 'can you', question: questions.last}
+    {body: 'Canute the Great', question: questions_id_val[0].id},
+    {body: 'Old Norse', question: questions_id_val[1].id},
+    {body: 'do you go', question: questions_id_val[2].id},
+    {body: 'have you got', question: questions_id_val[3].id},
+    {body: 'can you', question: questions_id_val[4].id}
 ])
 
 #-----------------------------------------------------------
@@ -66,13 +69,13 @@ users = [
     {name: "Tirion", email: "TiRion9090@mail.ru", password: '123456789'}
 ]
 
-user_id_val = nil
-
 if User.exists?
     p 'This User data is already exist!'
 else
-    user_id_val = User.create!(users)
+    User.create!(users)
 end
+
+user_id_val = User.all
 
 #-----------------------------------------------------------
 
@@ -87,5 +90,3 @@ if UserTest.exists?
 else
     UserTest.create!(user_test_val)
 end
-
-
