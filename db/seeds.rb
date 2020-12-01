@@ -8,14 +8,15 @@
 
 
 categories = [
-    {title: 'History'},
-    {title: 'Language'}
+  {title: 'Nature'},
+  {title: 'Sport'}
 ]
 
 if Category.exists?
-    p 'This data is already exist!'
+  p 'This data is already exist!'
 else
-    Category.create!(categories)
+  Category.create!(categories)
+  p 'The Category data is inserted!'
 end
 
 categories_id = Category.all
@@ -23,14 +24,15 @@ categories_id = Category.all
 #-----------------------------------------------------------
 
 tests = [
-    {title: 'Vikings', level: 1, category: categories_id[0].id},
-    {title: 'English', level: 2, category: categories_id[1].id}
+  {title: 'Trees', level: 1, category: categories_id[0].id},
+  {title: 'Cyber Sport', level: 2, category: categories_id[1].id}
 ]
 
 if Test.exists?
-    p 'This tests data is already exist!'
+  p 'This tests data is already exist!'
 else
-    Test.create!(tests)
+  Test.create!(tests)
+  p "The Test data is inserted!"
 end
 
 test_id_val = Test.all
@@ -38,41 +40,45 @@ test_id_val = Test.all
 #-----------------------------------------------------------
 
 questions = [
-    {body: 'A quiz on the famous Viking king?', test: test_id_val[0].id},
-    {body: 'What Language Did the Vikings Speak?', test: test_id_val[0].id},
-    {body: 'How often ___ to the dentist?', test: test_id_val[1].id},
-    {body: 'How many brothers and sisters ___ ?', test: test_id_val[1].id},
-    {body: 'What time ___ pick me up?', test: test_id_val[1].id}
-]
+  {body: 'What the name of the biggest in the world?', test_id: test_id_val[0].id},
+  {body: 'When relaised the firts Cyber sport games?', test_id: test_id_val[1].id}
+  ]
 
 
 if Question.exists?
-    p 'This test date is alredy exist'
+  p 'This test date is alredy exist'
 else
-    Question.create!(questions)
+  Question.create!(questions)
+  p "The Question data is inserted"
 end
 
 questions_id_val = Question.all
 
-Answer.create!([
-    {body: 'Canute the Great', question: questions_id_val[0].id},
-    {body: 'Old Norse', question: questions_id_val[1].id},
-    {body: 'do you go', question: questions_id_val[2].id},
-    {body: 'have you got', question: questions_id_val[3].id},
-    {body: 'can you', question: questions_id_val[4].id}
-])
+#-----------------------------------------------------------
+
+answers = [
+  {body: "Red Sicwoys", correct: true, question_id: questions_id[0].id},
+  {body: "In Japan 2011", correct: true, question_id: questions_id[1].id},
+]
+
+if Answer.exists?
+  p "The answer data is already exists"
+else
+  Answer.create!(answers)
+  p "The Answer data is inserted!"
+end
 
 #-----------------------------------------------------------
 
 users = [
-    {name: "Mikl", email: "Mikl123@mail.ru", password: '1234567'},
-    {name: "Tirion", email: "TiRion9090@mail.ru", password: '123456789'}
+  {name: "Mikl", email: "Mikl123@mail.ru", password: '1234567'},
+  {name: "Tirion", email: "TiRion9090@mail.ru", password: '123456789'}
 ]
 
 if User.exists?
-    p 'This User data is already exist!'
+  p 'This User data is already exist!'
 else
-    User.create!(users)
+  User.create!(users)
 end
 
 user_id_val = User.all
@@ -80,13 +86,12 @@ user_id_val = User.all
 #-----------------------------------------------------------
 
 user_test_val[
-    {user_id: user_id_val.id, test_id: test_id_val[0].id},
-    {user_id: user_id_val.id, test_id: test_id_val[1].id},
-    {user_id: user_id_val.id, test_id: test_id_val[2].id}
+  {user_id: user_id_val[0].id, test_id: test_id_val[0].id},
+  {user_id: user_id_val[1].id, test_id: test_id_val[1].id},
 ]
 
 if UserTest.exists?
-    p 'This uesr test data is already exist!'
+  p 'This uesr test data is already exist!'
 else
-    UserTest.create!(user_test_val)
+  UserTest.create!(user_test_val)
 end
