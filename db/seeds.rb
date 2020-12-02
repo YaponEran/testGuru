@@ -24,8 +24,8 @@ categories_id = Category.all
 #-----------------------------------------------------------
 
 tests = [
-  {title: 'Trees', level: 1, category: categories_id[0].id},
-  {title: 'Cyber Sport', level: 2, category: categories_id[1].id}
+  {title: 'Trees', level: 1, category: categories_id[0].id, author_id: user_id_val[2].id},
+  {title: 'Cyber Sport', level: 2, category: categories_id[1].id, author_id: user_id_val[2].id}
 ]
 
 if Test.exists?
@@ -72,7 +72,8 @@ end
 
 users = [
   {name: "Mikl", email: "Mikl123@mail.ru", password: '1234567'},
-  {name: "Tirion", email: "TiRion9090@mail.ru", password: '123456789'}
+  {name: "Tirion", email: "TiRion9090@mail.ru", password: '123456789'},
+  {user: "Laoshi", email:"lao123@gmail.com", password:'12345'}
 ]
 
 if User.exists?
