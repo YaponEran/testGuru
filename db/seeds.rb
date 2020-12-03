@@ -24,8 +24,8 @@ categories_id = Category.all
 #-----------------------------------------------------------
 
 tests = [
-  {title: 'Trees', level: 1, category: categories_id[0].id, author_id: user_id_val[2].id},
-  {title: 'Cyber Sport', level: 2, category: categories_id[1].id, author_id: user_id_val[2].id}
+  {title: 'Trees', level: 1, category: categories_id[0], author: user_id_val[2]},
+  {title: 'Cyber Sport', level: 2, category: categories_id[1].id, author: user_id_val[2]}
 ]
 
 if Test.exists?
@@ -40,8 +40,8 @@ test_id_val = Test.all
 #-----------------------------------------------------------
 
 questions = [
-  {body: 'What the name of the biggest in the world?', test_id: test_id_val[0].id},
-  {body: 'When relaised the firts Cyber sport games?', test_id: test_id_val[1].id}
+  {body: 'What the name of the biggest in the world?', test: test_id_val[0]},
+  {body: 'When relaised the firts Cyber sport games?', test: test_id_val[1]}
   ]
 
 
@@ -57,8 +57,8 @@ questions_id_val = Question.all
 #-----------------------------------------------------------
 
 answers = [
-  {body: "Red Sicwoys", correct: true, question_id: questions_id[0].id},
-  {body: "In Japan 2011", correct: true, question_id: questions_id[1].id},
+  {body: "Red Sicwoys", correct: true, question: questions_id[0]},
+  {body: "In Japan 2011", correct: true, question: questions_id[1]},
 ]
 
 if Answer.exists?
@@ -87,8 +87,8 @@ user_id_val = User.all
 #-----------------------------------------------------------
 
 user_test_val[
-  {user_id: user_id_val[0].id, test_id: test_id_val[0].id},
-  {user_id: user_id_val[1].id, test_id: test_id_val[1].id},
+  {user: user_id_val[0], test: test_id_val[0]},
+  {user: user_id_val[1], test: test_id_val[1]},
 ]
 
 if UserTest.exists?
