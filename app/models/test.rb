@@ -10,9 +10,12 @@ class Test < ApplicationRecord
   scope :easy, -> {where(level: 0..1)}
   scope :medium, -> {where(level: 2..4)}
   scope :hard, -> {where(level: 5..Float::INFINITY)}
+  scope :level, -> (level) {where(level: level)}
 
-  def self.names_by_category(name)
-    joins('JOIN categories ON categories.id = tests.category_id')
-    .where(categories: {title: name}).pluck(:title)
-  end
+  scope :by_category, -> (name) {joins(:category).where(categories: {title: name})}
+
+  # def self.names_by_category(name)
+  #   joins('JOIN categories ON categories.id = tests.category_id')
+  #   .where(categories: {title: name}).pluck(:title)
+  # end
 end
