@@ -4,7 +4,7 @@ class User < ApplicationRecord
 
   has_many :own_tests, class_name: 'Test', foreign_key: :author_id
 
-  scope :pass_tests_by_level, -> (level) {joins(:user_test).where(user_tests: level)}
+  validates :email, presence: true
 
   def test_by_level(level)
     tests.level(level)

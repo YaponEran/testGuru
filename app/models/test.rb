@@ -14,6 +14,9 @@ class Test < ApplicationRecord
 
   scope :by_category, -> (name) {joins(:category).where(categories: {title: name})}
 
+  validates :title, presence: true, uniqueness: {scope: [:title, :level]}
+  validates :level, numericality: {greater_than_or_equal_to: 0, only_integer: true}
+
   # def self.names_by_category(name)
   #   joins('JOIN categories ON categories.id = tests.category_id')
   #   .where(categories: {title: name}).pluck(:title)
