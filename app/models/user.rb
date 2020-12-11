@@ -4,8 +4,9 @@ class User < ApplicationRecord
 
   has_many :own_tests, class_name: 'Test', foreign_key: :author_id
 
-  def pass_tests_by_level(level)
-    Test.joins("INNER JOIN ON user_tests ON tests.id = user_tests.test_id")
-    .where(level: level, user_tests: {user_id: id})
+  validates :email, presence: true
+
+  def test_by_level(level)
+    tests.level(level)
   end
 end
