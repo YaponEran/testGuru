@@ -23,6 +23,10 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
+    if @question.destroy
+      render plain: 'Question destroyed successfuly'
+    else
+      render plain: 'Something went wrong by removing question'
   end
 
   private
