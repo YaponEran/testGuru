@@ -17,16 +17,15 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    if @test.questions.create(question_params)
+    if @test.questions.create(question_params).save
       redirect_to test_question_path
+    else
+      redirect_to new_test_question_path
     end
   end
 
   def destroy
-    if @question.destroy
-      render plain: 'Question destroyed successfuly'
-    else
-      render plain: 'Something went wrong by removing question'
+     @question.destroy
   end
 
   private
