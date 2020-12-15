@@ -14,12 +14,16 @@ class QuestionsController < ApplicationController
   end
 
   def new
+    @questions = @test.questions.new
   end
 
   def create
-    if @test.questions.create(question_params).save
+    question = @test.questions.new(question_params)
+    if question.save
       redirect_to test_question_path
     else
+      flash[:error] = "Question body can't be blank"
+      # flash[:error] = question.errors.messages
       redirect_to new_test_question_path
     end
   end
