@@ -22,9 +22,8 @@ class QuestionsController < ApplicationController
     if question.save
       redirect_to test_question_path
     else
-      flash[:error] = "Question body can't be blank"
-      # flash[:error] = question.errors.messages
-      redirect_to new_test_question_path
+      flash[:error] = question.errors.messages
+      render :new
     end
   end
 
