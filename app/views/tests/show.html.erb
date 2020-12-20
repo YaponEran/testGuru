@@ -1,0 +1,24 @@
+<p>
+  <strong> Titile: </strong>
+  <%= @test.title %>
+</p>
+
+<p>
+  <strong> Level: </strong>
+  <%= @test.level %>
+</p>
+
+<p>
+  <strong> Category id: </strong>
+  <%= @test.category_id %>
+</p>
+
+<ul>
+  <% @test.questions.each do |question| %>
+    <li><%= question.body %></li>
+  <% end %>
+</ul>
+
+<p>
+  <%= link_to 'All tests', tests_path %> | <%= link_to 'Edit', edit_test_path(@test) %>
+</p>
