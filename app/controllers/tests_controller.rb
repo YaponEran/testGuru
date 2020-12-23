@@ -5,9 +5,7 @@ class TestsController < ApplicationController
     @tests = Test.all
   end
 
-  def show
-    @test
-  end
+  def show; end
 
   def new
     @test = Test.new
