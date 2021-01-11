@@ -20,7 +20,7 @@ class TestPassage < ApplicationRecord
   end
 
   def score
-    correct_questions * 100 / test.questions.count
+    correct_questions * 100.0 / test.questions.count
   end
 
   def passed?
