@@ -4,7 +4,18 @@ class User < ApplicationRecord
 
   has_many :own_tests, class_name: 'Test', foreign_key: :author_id
 
-  validates :email, presence: true
+  has_secure_password
+
+  validates :email, presence: true, 
+                    uniqueness: true, 
+                    format: {
+                      with: /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i,
+                      message: 'Invalid email format!'                                        
+                    }
+
+  validates :username, presence: true
+  validates :password, presence: true
+  validates :password, confirmation: true
 
   def test_by_level(level)
     tests.level(level)
