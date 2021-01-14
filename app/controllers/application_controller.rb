@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   private
   def authenticate_user!
     unless current_user
-      cookies[:redirect_url] = request.url
+      cookies[:path] = request.url
       redirect_to login_path, alert: 'Hey you first verify email and password!'
     end
   end
