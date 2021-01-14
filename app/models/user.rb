@@ -9,7 +9,7 @@ class User < ApplicationRecord
   validates :email, presence: true, 
                     uniqueness: true, 
                     format: {
-                      with: /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i,
+                      with:  with: URI::MailTo::EMAIL_REGEXP,
                       message: 'Invalid email format!'                                        
                     }
 
