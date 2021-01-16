@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+
   has_many :test_passages, dependent: :destroy
   has_many :tests, through: :test_passages
 
@@ -9,7 +10,7 @@ class User < ApplicationRecord
   validates :email, presence: true, 
                     uniqueness: true, 
                     format: {
-                      with:  with: URI::MailTo::EMAIL_REGEXP,
+                      with: URI::MailTo::EMAIL_REGEXP,
                       message: 'Invalid email format!'                                        
                     }
 
