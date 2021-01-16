@@ -34,7 +34,7 @@ class TestPassage < ApplicationRecord
   private
 
   def before_validate_set_first_question
-    self.current_question = test.question.first
+    self.current_question = test.questions.first
   end
 
   def correct_answer?(answer_ids)
