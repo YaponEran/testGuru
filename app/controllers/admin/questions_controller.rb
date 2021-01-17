@@ -1,6 +1,5 @@
-class QuestionsController < ApplicationController
+class Admin::QuestionsController < Admin::BaseController
   
-  before_action :authenticate_user!
   before_action :find_test, only: %i[new create]
   before_action :find_question, only: %i[show destroy edit update]
 
@@ -11,7 +10,6 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    render inline: "<li> <%= @question.body %> </li>"
   end
 
   def new
@@ -21,7 +19,18 @@ class QuestionsController < ApplicationController
   def create
     @question = @test.questions.new(question_params)
     if @question.save
-      redirect_to test_question_path
+      redirect_to admin_question_path(@question)
+    else
+      render :new
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @question.update(question_params)
+      redirect_to admin_question_path(@question)
     else
       render :new
     end
@@ -29,6 +38,7 @@ class QuestionsController < ApplicationController
 
   def destroy
      @question.destroy
+     redirect_to admin_test_path(@question.test)
   end
 
   private
