@@ -14,11 +14,8 @@ class User < ApplicationRecord
                       message: 'Invalid email format!'                                        
                     }
 
-  # validates :username, presence: true
   validates :password, presence: true
   validates :password, confirmation: true
-
-  # has_secure_password 
 
   def test_by_level(level)
     tests.level(level)
@@ -28,5 +25,12 @@ class User < ApplicationRecord
     test_passages.order(id: :desc).find_by(test_id: test.id) 
   end
   
+  def admin?
+    self.is_a?(Admin)
+  end
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
   
 end
