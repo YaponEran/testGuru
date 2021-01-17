@@ -8,7 +8,12 @@ class User < ApplicationRecord
   has_many :tests, through: :test_passages
   has_many :own_test, class_name: "Test", foreign_key: :author_id
 
-  validates :email, presence: true
+  validates :email, presence: true, 
+                    format: {
+                      with: URI::MailTo::EMAIL_REGEXP,
+                      message: 'Invalid email format!'                                        
+                    }
+
   # validates :username, presence: true
   validates :password, presence: true
   validates :password, confirmation: true
