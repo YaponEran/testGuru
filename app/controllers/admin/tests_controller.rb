@@ -13,7 +13,7 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def create
-    @test = current_user.tests_created.new(test_params)
+    @test = current_user.own_tests.new(test_params)
     if @test.save
       redirect_to admin_test_path(@test)
     else
@@ -35,13 +35,9 @@ class Admin::TestsController < Admin::BaseController
 
   def destroy
     @test.destroy 
-    redirect_to tests_path
+    redirect_to admin_test_path
   end
 
-  def start
-    current_user.tests.push(@test)
-    redirect_to @current_user.test_passage(@test)
-  end
 
   private
   def test_params
@@ -51,8 +47,5 @@ class Admin::TestsController < Admin::BaseController
   def find_test
     @test = Test.find(params[:id])
   end
-
-  def find_user
-    @user = User.first
-  end
+  
 end

@@ -5,6 +5,8 @@ class TestPassage < ApplicationRecord
 
   before_validation :before_validation_set_first_question, on: :create
 
+  POINTS_TO_COMPLETE = 85
+
   def completed?
     current_question.nil?
   end
@@ -16,6 +18,18 @@ class TestPassage < ApplicationRecord
 
     self.current_question = next_question
     save!
+  end
+
+  def score
+    correct_questions * 100 / test.questions.count
+  end
+
+  def passed?
+    score >= POINTS_TO_COMPLETE
+  end
+
+  def question_index
+    test.questions.index(current_question) + 1
   end
 
   private

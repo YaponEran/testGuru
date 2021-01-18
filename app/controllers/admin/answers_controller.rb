@@ -1,5 +1,6 @@
 class Admin::AnswersController < Admin::BaseController
   
+  before_action :authenticate_user!
   before_action :find_answer, only: %i[show edit update destroy]
   before_action :find_question, only: %i[new create]
 
@@ -7,7 +8,7 @@ class Admin::AnswersController < Admin::BaseController
   end
 
   def new
-    @question = @question.answers.new
+    @answer = @question.answers.new
   end
 
   def create
@@ -33,6 +34,11 @@ class Admin::AnswersController < Admin::BaseController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @answer.destroy
+    redirect_to admin_answer_question_path(@answer)
   end
 
   private

@@ -1,9 +1,10 @@
 class Admin::QuestionsController < Admin::BaseController
   
-  before_action :find_test, only: %i[new create]
+  before_action :authenticate_user!
+  before_action :find_test, only: %i[index create new]
   before_action :find_question, only: %i[show destroy edit update]
 
-  rescue_form ActiveRecord::RecordNotFound, with: :rescue_question_not_found
+  rescue_from ActiveRecord::RecordNotFound, with: :rescue_question_not_found
 
   def index
     @questions = Question.all
@@ -13,7 +14,7 @@ class Admin::QuestionsController < Admin::BaseController
   end
 
   def new
-    @questions = @test.questions.new
+    @question = Question.new
   end
 
   def create
@@ -57,4 +58,5 @@ class Admin::QuestionsController < Admin::BaseController
   def rescue_question_not_found
     render plain: "Question not found"
   end
+
 end

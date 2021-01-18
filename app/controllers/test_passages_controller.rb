@@ -18,7 +18,7 @@ class TestPassagesController < ApplicationController
   end
 
   private
-  def find_test_passage
+  def find_test_passages
     @test_passage = TestPassage.find(params[:id])
   end
 end
