@@ -1,8 +1,7 @@
-
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
-    <title>TestGuru | Admin Panel</title>
+    <title>Admin | TestGuru</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,12 +10,9 @@
   </head>
 
   <body>
-    <%= render 'admin/nav' %> 
-
+    <%= render 'admin/nav' %>
     <%= render 'shared/flash' %>
-
     <%= yield %>
-
     <%= render 'shared/footer' %>
   </body>
 </html>

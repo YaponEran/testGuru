@@ -26,7 +26,7 @@ categories_id = Category.all
 users = [
   {first_name: "Mikl", email: "Mikl123@mail.ru", password: '1234567'},
   {first_name: "Tirion", email: "TiRion9090@mail.ru", password: '123456789'},
-  {first_name: "Laoshi", email:"lao123@gmail.com", password:'12345'}
+  {first_name: "Laoshi", email:"lao123@gmail.com", password:'12qwaszxalp'}
 ]
 
 if User.exists?

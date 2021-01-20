@@ -5,14 +5,15 @@ class ApplicationController < ActionController::Base
 
   private
   def after_sign_in_path_for(user)
+    stored_location_for(user)
     if user.admin?
       admin_tests_path
     else
-      root_path
+      super
     end
   end
 
-  def configure_permited_parameters
+  def configure_permitted_parameters 
     devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :first_name, :last_name, :password, :password_confirmation])
   end
 end
