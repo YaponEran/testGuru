@@ -1,21 +1,19 @@
 class ApplicationController < ActionController::Base
 
-  helper_method :current_user, :logged_in?
+  before_action :authenticate_user!
+  before_action :configure_permited_parameters, if: :devise_controller?
 
   private
-  def authenticate_user!
-    unless current_user
-      cookies[:previus_url] = request.url
-      redirect_to login_path, alert: 'Hey you first verify email and password!'
+  def after_sign_in_path_for(user)
+    stored_location_for(user)
+    if user.admin?
+      admin_tests_path
+    else
+      super
     end
   end
 
-  def current_user
-    @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
+  def configure_permitted_parameters 
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :first_name, :last_name, :password, :password_confirmation])
   end
-
-  def logged_in?
-    current_user.present? 
-  end
-  
 end
