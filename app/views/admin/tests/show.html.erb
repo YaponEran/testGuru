@@ -1,16 +1,22 @@
-<h1>Test <%= @test.title %></h1>
+<h1><%= t('tests.index.title') %> <%= @test.title %> </h1>
 <div class="links">
-  <%= link_to "Test list", admin_tests_path %>  |
-  <%= link_to "Edit", edit_admin_test_path(@test) %>  | 
+  <%= link_to t('admin.all_tests'), admin_tests_path %>  |
+  <%= link_to t('admin.tests.test.edit'), edit_admin_test_path(@test) %>  | 
   <%= link_to "Create test", new_admin_test_path(@test) %>
 </div>
 
-<p>Category: <%= @test.category.title %></p>
-<p>Level: <%= @test.level %></p>
+<p><strong> <%= t('tests.index.category') %> </strong> <%= @test.category.title %></p>
+<p> <%= t('tests.index.level')%> <strong><%= @test.level %></strong> </p>
+
+<p>
+	<strong><%= t('.author') %>: </strong>
+	<%= @test.author.full_name %>
+</p>
 
 <h2>Question to test</h2>
-<div style="margin: 10px;"><%= link_to "Add new Question to this test", new_admin_test_question_path(@test)%></div>
+<div style="margin: 10px;"><%= link_to t('.new'), new_admin_test_question_path(@test)%></div>
 
+<p><%= t('.questions') %>:</p>
 
 <table style="margin: 10px;">
 

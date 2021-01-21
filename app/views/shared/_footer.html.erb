@@ -1,12 +1,12 @@
 <div>
   <hr>
-  <p><%= current_year %>, by Gulamov Rovshen</p>
-  <p>Test-Guru is a website for conducting tests</p>
+  <p><%= t('footer.author', year: current_year) %></p>
+  <p><%= t('footer.about') %></p>
   <div>
     <%= github_url('YaponEran','testGuru') %>
     <img src="https://pbs.twimg.com/media/De1g5bsXcAI0xEg.png:large" height='30px'>
   </div>
   <p>
-    <%= link_to "Rails basics course's project", 'https://thinknetica.com', target: '_blank'%>
+    <%= link_to t('footer.thinknetica'), 'https://thinknetica.com', target: '_blank'%>
   </p>
 </div>
