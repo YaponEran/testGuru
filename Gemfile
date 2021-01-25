@@ -28,6 +28,10 @@ gem 'jbuilder', '~> 2.7'
 #AUTH
 gem 'devise', '~> 4.0'
 
+#UI
+gem 'jquery-rails'
+gem 'bootstrap', '~> 5.0.0.beta1'
+
 #locales
 gem 'rails-i18n'
 
