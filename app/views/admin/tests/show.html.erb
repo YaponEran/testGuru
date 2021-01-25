@@ -1,6 +1,6 @@
-<%= link_to 'Edit', edit_admin_test_path(@test) %>
+<%= link_to t('admin.tests.test.edit'), edit_admin_test_path(@test) %>
 <%= link_to 'New test', new_admin_test_path(@test) %>
-<%= link_to 'All tests', admin_tests_path %>
+<%= link_to t('admin.all_tests'), admin_tests_path %>
 <div>
   <h1> Test title: <%= @test.title %></h1>
   <p><strong>Category:</strong>  <%= @test.category.title %></p>
@@ -12,8 +12,8 @@
 <h2>Create Question to this test</h2>
 <table>
   <tbody>
-    <%= render partial: 'questions/question', collection: @test.questions %>
+    <%= render partial: 'admin/questions/question', collection: @test.questions %>
   </tbody>
 </table>
 
-<%= link_to 'Create new Question', new_admin_test_question_path(@test) %>
+<%= link_to t('.new'), new_admin_test_question_path(@test) %>
