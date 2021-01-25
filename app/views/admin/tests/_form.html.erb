@@ -1,6 +1,5 @@
 <%= form_with model: [:admin, @test], local: true do |form| %>
   <%= render 'shared/errors', resource: @test %>
-
   <p>
     <%= form.label :title %>
     <%= form.text_field :title, id: :test_title %>
@@ -8,13 +7,16 @@
 
   <p>
     <%= form.label :level %>
-    <%= form.number_field :level, id: :test_level%>
+    <%= form.number_field :level, id: :test_level %>
   </p>
 
   <p>
     <%= form.label :category_id %>
-    <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true %>
+    <%= form.collection_select :category_id, Category.all, :id, :title, prompt: t('helpers.select') %>
   </p>
 
-  <p><%= form.submit %></p>
+  <p>
+    <%= form.submit %>
+  </p>
+
 <% end %>
