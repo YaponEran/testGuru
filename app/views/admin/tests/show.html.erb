@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <div class="card border-primary">
   <div class="card-body">
     <h1><%= t('tests.index.title') %> <%= @test.title %> </h1>
@@ -28,30 +27,8 @@
         <th colspan='3'>Action</th>
       </thead>
       <tbody>
-        <%# <%= render @test.questions %> 
         <%= render partial: 'admin/questions/question', collection: @test.questions%>
       </tbody>
     </table>
   </div>
 </div>
-=======
-<%= link_to t('admin.tests.test.edit'), edit_admin_test_path(@test) %>
-<%= link_to 'New test', new_admin_test_path(@test) %>
-<%= link_to t('admin.all_tests'), admin_tests_path %>
-<div>
-  <h1> Test title: <%= @test.title %></h1>
-  <p><strong>Category:</strong>  <%= @test.category.title %></p>
-  <p><strong>Level:</strong>  <%= @test.level %></p>
-  <p><strong>Author:</strong>  <%= @test.author.email %></p>
-</div>
-
-<hr>
-<h2>Create Question to this test</h2>
-<table>
-  <tbody>
-    <%= render partial: 'admin/questions/question', collection: @test.questions %>
-  </tbody>
-</table>
-
-<%= link_to t('.new'), new_admin_test_question_path(@test) %>
->>>>>>> master
