@@ -1,5 +1,10 @@
 module ApplicationHelper
 
+  NOTICE_KEYS = {
+    alert: "alert alert-danger", notice: "alert alert-info", success: "alert alert-success",
+    warning: "alert alert-warning", primary: "alert alert-primary"
+  }
+
   def current_year
     Date.current.strftime('%Y')
   end
@@ -9,10 +14,6 @@ module ApplicationHelper
   end
 
   def flash_message(key)
-    {
-        notice: 'alert-info',
-        alert: 'alert-danger'
-    }[key.to_sym]
+    NOTICE_KEYS[key.to_sym]
   end
-  
 end
