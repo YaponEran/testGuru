@@ -7,6 +7,9 @@ ru:
         update: "Обновить тест"
     select: "Пожалуйста выберите"
 
+  gist:
+    description: "Вопрос про #{title} в Test-Guru"
+
   shared:
       errors:
         header:
@@ -35,6 +38,9 @@ ru:
       fail: "Вы не прошли тест :("
     show:
       progress: "Прогресс"
+    gist: 
+      success: "Gist успешно сохранен! %{url}"
+      failure: "Произошла ошибка во время сохранения Gist."
 
   tests_mailer:
     completed_test:
