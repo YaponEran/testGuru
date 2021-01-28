@@ -13,7 +13,7 @@ module ApplicationHelper
     link_to 'Test-Guru', "https://github.com/#{author}/#{repo}", target: '_blank'
   end
 
-  def flash_message(key)
+  def class_message(key)
     NOTICE_KEYS[key.to_sym]
   end
 end
