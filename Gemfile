@@ -32,6 +32,15 @@ gem 'devise', '~> 4.0'
 gem 'jquery-rails'
 gem 'bootstrap', '~> 5.0.0.beta1'
 
+#GitHub client
+gem "octokit", "~> 4.0"
+
+#ENV
+gem 'dotenv-rails'
+
+#Networking
+gem 'faraday'
+
 #locales
 gem 'rails-i18n'
 
