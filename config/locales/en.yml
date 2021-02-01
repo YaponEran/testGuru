@@ -37,6 +37,9 @@ en:
         create: "Create test"
         update: "Update test"
     select: "Please select"
+  
+  gist:
+    description: "Question about #{title} from Test-Guru"
 
   shared:
     errors:
@@ -65,6 +68,9 @@ en:
       fail: "You have failed the test :("
     show:
       progress: "Progress"
+    gist:
+      success: "Gist was successfully created! %{url}"
+      failure: "An error occured while creating Gist."
 
   tests_mailer:
     completed_test:
