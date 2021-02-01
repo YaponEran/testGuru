@@ -13,8 +13,7 @@ class GistQuestionService
     end
   
     def success?
-      statuses = *(200..209)
-      statuses.include?(self.client.last_response.status.to_i)
+      (200..209).include?(self.client.last_response.status.to_i)
     end
   
     def url
