@@ -38,6 +38,10 @@ gem "octokit", "~> 4.0"
 #ENV
 gem 'dotenv-rails'
 
+# Icons
+gem 'octicons_helper'
+
+
 #Networking
 gem 'faraday'
 
