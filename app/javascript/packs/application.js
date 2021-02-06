@@ -7,6 +7,10 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+require("../utilities/sorting")
+require("../utilities/progress")
+require("../utilities/formInline")
+require("../utilities/passwordCheck")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
