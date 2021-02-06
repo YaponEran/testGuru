@@ -63,6 +63,7 @@ ru:
       header: "Панель администратора Test-Guru"
       welcome: 'Добро пожаловать'
       logout: 'Выйти'
+    enter: 'Ok'
 
     all_tests: "Все тесты"
 

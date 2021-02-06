@@ -90,6 +90,7 @@ en:
       header: "Test-Guru admin panel"
       welcome: 'Welcome'
       logout: 'Log out'
+    enter: 'Ok'
 
     all_tests: "All tests"
 
