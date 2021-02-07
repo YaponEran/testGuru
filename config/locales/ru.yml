@@ -9,6 +9,14 @@ ru:
 
   gist:
     description: "Вопрос про #{title} в Test-Guru"
+  
+  feedback:
+    new:
+      header: "Отправить отзыв"
+      message: "Сообщение"
+    create:
+      success: "Отзыв успешно сохранен!"
+      failure: "Во время сохранения отзыва произошла ошибка!"
 
   shared:
       errors:
@@ -96,3 +104,4 @@ ru:
         edit: "Редактировать"
         delete: "Удалить"
         message: "Вы уверены?"
+  
