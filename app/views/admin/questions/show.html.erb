@@ -1,0 +1,17 @@
+
+<h1><%= @question.test.title %> Question</h1>
+
+<p><%= @question.body %></p>
+
+<h2>Answers</h2>
+
+<%= link_to 'New answer', new_admin_question_answer_path(@question) %> 
+
+<ol>
+	<%= render @question.answers %>
+</ol>
+
+<div class="mt-2">
+	<%= link_to t('admin.edit'), edit_admin_question_path(@question), class: "btn btn-primary" %>
+	<%= link_to t('admin.back'), admin_test_path(@question.test), class: "btn btn-info" %>
+</div>

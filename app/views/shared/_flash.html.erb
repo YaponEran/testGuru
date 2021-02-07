@@ -1,0 +1,5 @@
+<% flash.each do |key, message| %>
+  <div class="col-6 alert <%= class_message(key) %>">
+    <%= message %>
+  </div>
+<% end %>

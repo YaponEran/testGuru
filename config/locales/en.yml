@@ -1,0 +1,124 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at https://guides.rubyonrails.org/i18n.html.
+
+en:
+  helpers:
+    start: "Start"
+    submit:
+      tests:
+        create: "Create test"
+        update: "Update test"
+    select: "Please select"
+  
+  gist:
+    description: "Question about #{title} from Test-Guru"
+
+  shared:
+    errors:
+      header:
+        one: "%{count} error detected"
+        other: "%{count} errors detected"
+
+
+  label:
+    test:
+      title: "Title"
+      level: "Level"
+      category_id: "Category"
+
+  tests:
+    index:
+      header: "Tricky tests"
+      title: "Title"
+      category: "Category"
+      questions: "Questions"
+
+  test_passages:
+    result:
+      header: "Test %{title} was successfully completed!"
+      success: "You have passed the test!"
+      fail: "You have failed the test :("
+    show:
+      progress: "Progress"
+    gist:
+      success: "Gist was successfully created! %{url}"
+      failure: "An error occured while creating Gist."
+
+  tests_mailer:
+    completed_test:
+      subject: "You just completed Test-Guru test!"
+
+  header:
+    welcome: 'Welcome'
+    logout: 'Log out'
+
+  footer:
+    author: '%{year}, Author: Gulamov Rovshen'
+    about: 'Test-Guru is a website for creating and passing tests'
+    thinknetica: "Rails basics course's project"
+
+  admin:
+    nav:
+      header: "Test-Guru admin panel"
+      welcome: 'Welcome'
+      logout: 'Log out'
+
+    all_tests: "All tests"
+
+    tests:
+      new:
+        header: "Create test"
+      create:
+        success: "Test was successfully created"
+
+      edit:
+        header: "Edit test"
+      update:
+        success: "Тест успешно изменен"
+
+      destroy:
+        success: "Test was successfully updated"
+
+      index:
+        actions: "Actions"
+        new: "Create test"
+
+
+      show:
+        author: "Author"
+        questions: "Questions"
+        new: "Create question"
+
+      test:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        message: "Are you sure?"
