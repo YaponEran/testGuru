@@ -90,6 +90,7 @@ en:
       header: "Test-Guru admin panel"
       welcome: 'Welcome'
       logout: 'Log out'
+    enter: 'Ok'
 
     all_tests: "All tests"
 
@@ -122,3 +123,11 @@ en:
         edit: "Edit"
         delete: "Delete"
         message: "Are you sure?"
+      
+  feedback:
+    new:
+      header: "Send feedback"
+      message: "Message"
+    create:
+      success: "feedback was successfully saved!"
+      failure: "An error occured while saving your feedback!"

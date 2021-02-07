@@ -9,8 +9,8 @@ require("@rails/activestorage").start()
 require("channels")
 require("../utilities/sorting")
 require("../utilities/progress")
-require("../utilities/formInline")
-require("../utilities/passwordCheck")
+require("../utilities/formline")
+require("../utilities/passwordchecking")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

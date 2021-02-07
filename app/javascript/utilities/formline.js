@@ -1,5 +1,5 @@
 document.addEventListener('turbolinks:load', function(){
-    var controls = document.querySelector('.form-line-link')
+    var controls = document.querySelectorAll('.form-inline-link')
 
     if(controls.length){
         for(var i = 0; i < controls.length; i++){
@@ -18,7 +18,7 @@ document.addEventListener('turbolinks:load', function(){
 function formInlineLinkHandler(event){
     event.preventDefault()
 
-    var testId = this.dataset.tes
+    var testId = this.dataset.testId
 
     formLineHandler(testId)
 }
