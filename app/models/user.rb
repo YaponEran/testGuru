@@ -6,6 +6,8 @@ class User < ApplicationRecord
   has_many :tests, through: :test_passages
   has_many :own_tests, class_name: "Test", foreign_key: :author_id
 
+  has_and_belongs_to_many :badges
+
   def test_by_level(level)
     tests.level(level)
   end
