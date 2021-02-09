@@ -10,6 +10,9 @@ class Admin::BadgesController < Admin::BaseController
     @badge = Badge.new
   end
 
+  def show
+  end
+
   def create
     @badge = Badge.new(badge_params)
 
