@@ -32,6 +32,14 @@ class TestPassage < ApplicationRecord
     test.questions.index(current_question) + 1
   end
 
+  def time_passed
+    Time.now - created_at
+  end
+
+  def time_left
+    (test.duration * 60 - time_passed).to_i
+  end
+
   private
   def before_validation_set_first_question
     self.current_question = test.questions.first

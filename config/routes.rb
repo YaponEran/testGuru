@@ -36,6 +36,6 @@ Rails.application.routes.draw do
   get 'feedbacks', to: 'feedback#new'
   post 'feedbacks', to: 'feedback#create' 
 
-  get "user", to: "users#show"
+  get "users", to: "users#show"
 
 end

@@ -9,6 +9,11 @@
     </p>
   <% end %>
 
+   <%= t('.time_left') %> 
+    <div id="timeLeft">
+      <p class="remaining hide"><%= @test_passage.time_left %></p>
+    </div>
+
   <div class="progress">
     <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
   </div>
