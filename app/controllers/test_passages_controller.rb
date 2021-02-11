@@ -1,11 +1,25 @@
+require_relative '../helpers/badges_helper'
+
 class TestPassagesController < ApplicationController
   
   before_action :authenticate_user!
   before_action :find_test_passage, only: %i[show result update gist]
   def show
+    if @test_passage.test.questions.blank?
+      redirect_to root_path, alert: t('.invalid_questions')
+    end
+
+    if @test_passage.current_question.answers.blank?
+      redirect_to root_path, alert: t('.invalid_answers')
+    end
   end
 
   def result
+    @test_passage.update(passed: true)
+    badges = BadgeService.new(@test_passage).call
+    if badges
+      flash[:notice] = helpers.badge_notification(badges)
+    end
   end
 
   def update

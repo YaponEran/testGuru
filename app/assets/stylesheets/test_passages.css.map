@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "test_passages.scss"
+    ],
+    "names": [],
+    "file": "test_passages.css"
+}
