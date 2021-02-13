@@ -7,7 +7,7 @@ class BadgeService
   
     end
   
-    def call
+    def badges 
       Badge.select do |badge|
         if honored?(badge)
           @test_passage.user.badges << badge

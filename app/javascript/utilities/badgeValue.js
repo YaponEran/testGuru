@@ -5,7 +5,7 @@ document.addEventListener('turbolinks:load', function() {
       ruleTypeSelector.addEventListener('change', ruleValueSelectorChange)
     }
   })
-  
+
   function ruleValueSelectorChange() {
     if (this.value == "first_try") {
       labelShow(".tests", ".categories", ".levels", ".all")
@@ -30,33 +30,42 @@ document.addEventListener('turbolinks:load', function() {
   }
   
   function valueShow(c0, c1, c2, e=false) {
-    if (e) {
-      document.querySelector(c0).classList.add("hide")
-    } else {
-      document.querySelector(c0).classList.remove("hide") 
-    }
-    document.querySelector(c1).classList.add("hide")
-    document.querySelector(c2).classList.add("hide")
+
+    let v_0 = document.querySelector(c0)
+    e ?  v_0.classList.add("hide") :  v_0.classList.remove("hide") 
+
+    let v_1 = document.querySelector(c1)
+    v_1.classList.add("hide")
+
+    let v_2 = document.querySelector(c2)
+    v_2.classList.add("hide")
   }
   
   function setName(c0, c1, c2, e=false) {
-    if (e) {
-      document.querySelector(c0).setAttribute("name", "badge[nothing]")
-    } else {
-      document.querySelector(c0).setAttribute("name", "badge[rule_value]")
-    }
-    document.querySelector(c1).setAttribute("name", "badge[nothing]")
-    document.querySelector(c2).setAttribute("name", "badge[nothing]")
+
+    let s_0 = document.querySelector(c0)
+    e ?  s_0.setAttribute("name", "badge[nothing]") : 
+         s_0.setAttribute("name", "badge[rule_value]")
+
+    let s_1 = document.querySelector(c1)
+    s_1.setAttribute("name", "badge[nothing]")
+
+    let s_3 = document.querySelector(c2)
+    s_3.setAttribute("name", "badge[nothing]")
   
   }
   
   function labelShow(c1, c2, c3, c4, e=false) {
-    if (e) {
-      document.querySelector(c1).classList.add("hide")
-    } else {
-      document.querySelector(c1).classList.remove("hide") 
-    }
-    document.querySelector(c2).classList.add("hide")
-    document.querySelector(c3).classList.add("hide")
-    document.querySelector(c4).classList.add("hide")
+    let l_0 = document.querySelector(c1)
+
+    e ? l_0.classList.add("hide") :  l_0.classList.remove("hide") 
+
+    let l_1 = document.querySelector(c2)
+    l_1.classList.add("hide")
+
+    let l_2 = document.querySelector(c3)
+    l_2.classList.add("hide")
+
+    let l_3 = document.querySelector(c4)
+    l_3.classList.add("hide")
   }

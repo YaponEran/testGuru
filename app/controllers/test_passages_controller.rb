@@ -16,7 +16,7 @@ class TestPassagesController < ApplicationController
 
   def result
     @test_passage.update(passed: true)
-    badges = BadgeService.new(@test_passage).call
+    badges = BadgeService.new(@test_passage).badges
     if badges
       flash[:notice] = helpers.badge_notification(badges)
     end
