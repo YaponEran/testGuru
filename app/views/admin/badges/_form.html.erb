@@ -12,7 +12,7 @@
 
             <p>
               <%= form.label t('.octicon') %>
-              <%= form.select :octicon, Badge.octicons, class: "form-control" %>
+              <%= form.select :octicon, Badge::OCTICONS, class: "form-control" %>
             </p>
 
             <p>
@@ -21,13 +21,13 @@
 
             <p>
               <%= form.label t('.color') %>
-              <%= form.select :color, Badge.colors, class: "form-control" %>
+              <%= form.select :color, Badge::COLORS, class: "form-control" %>
             </p>
 
             <p>
               <%= form.label t('.rule') %>
               <%= form.select :rule, 
-              Badge.rules,
+              Badge::RULES,
               prompt: t('helpers.select'),
               class: "form-control rule" %>
             </p>

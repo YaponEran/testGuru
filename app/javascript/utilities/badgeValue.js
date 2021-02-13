@@ -6,28 +6,37 @@ document.addEventListener('turbolinks:load', function() {
     }
   })
 
+function firstTry(){
+    labelShow(".tests", ".categories", ".levels", ".all")
+    valueShow(".rule_tests", ".rule_categories", ".rule_levels")
+    setName(".rule_tests", ".rule_categories", ".rule_levels")
+}
+
+function allByCategory(){
+    labelShow(".categories", ".levels", ".tests", ".all")
+    valueShow(".rule_categories", ".rule_tests", ".rule_levels")
+    setName(".rule_categories", ".rule_tests", ".rule_levels")
+}
+
+function allByLevel(){
+    labelShow(".levels", ".tests", ".categories", ".all")
+    valueShow(".rule_levels", ".rule_categories", ".rule_tests")
+    setName(".rule_levels", ".rule_categories", ".rule_tests")
+}
+
+function defaultSetup(){
+    labelShow(".tests", ".categories", ".levels", ".all", e=true)
+    valueShow(".rule_levels", ".rule_categories", ".rule_tests", e=true)
+    setName(".rule_levels", ".rule_categories", ".rule_tests", e=true)
+}
+
   function ruleValueSelectorChange() {
-    if (this.value == "first_try") {
-      labelShow(".tests", ".categories", ".levels", ".all")
-      valueShow(".rule_tests", ".rule_categories", ".rule_levels")
-      setName(".rule_tests", ".rule_categories", ".rule_levels")
-  
-    } else if (this.value == "all_by_category") {
-      labelShow(".categories", ".levels", ".tests", ".all")
-      valueShow(".rule_categories", ".rule_tests", ".rule_levels")
-      setName(".rule_categories", ".rule_tests", ".rule_levels")
-  
-    } else if (this.value == "all_by_level") {
-      labelShow(".levels", ".tests", ".categories", ".all")
-      valueShow(".rule_levels", ".rule_categories", ".rule_tests")
-      setName(".rule_levels", ".rule_categories", ".rule_tests")
-  
-    } else {
-      labelShow(".tests", ".categories", ".levels", ".all", e=true)
-      valueShow(".rule_levels", ".rule_categories", ".rule_tests", e=true)
-      setName(".rule_levels", ".rule_categories", ".rule_tests", e=true)
-    }
+    (this.value == "first_try") ? firstTry() : 
+    (this.value == "all_by_category") ? allByCategory(): 
+    (this.value == "all_by_level") ? allByLevel() : 
+    defaultSetup()
   }
+
   
   function valueShow(c0, c1, c2, e=false) {
 

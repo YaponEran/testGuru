@@ -16,15 +16,15 @@ class TestPassagesController < ApplicationController
 
   def result
     @test_passage.update(passed: true)
-    badges = BadgeService.new(@test_passage).badges
-    if badges
-      flash[:notice] = helpers.badge_notification(badges)
-    end
   end
 
   def update
     @test_passage.accept!(params[:answer_ids])
     if @test_passage.completed?
+      badges = BadgeService.new(@test_passage).badges
+      if badges
+        flash[:notice] = helpers.badge_notification(badges)
+      end
       redirect_to result_test_passage_path(@test_passage)
     else
       render :show

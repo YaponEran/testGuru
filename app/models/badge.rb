@@ -10,17 +10,17 @@ class Badge < ApplicationRecord
   COLORS =  %w(black white red blue green yellow)
   RULES =  %w(all_by_category all_tests first_try all_by_level)
 
-  def self.octicons
-    OCTICONS
-  end
+  # def self.octicons
+  #   OCTICONS
+  # end
 
-  def self.colors
-   COLORS
-  end
+  # def self.colors
+  #  COLORS
+  # end
 
-  def self.rules
-    RULES
-  end
+  # def self.rules
+  #   RULES
+  # end
 
   private
 
