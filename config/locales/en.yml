@@ -38,8 +38,21 @@ en:
         update: "Update test"
     select: "Please select"
   
+    badges_helper:
+        message:
+          one: "You got one Badge!"
+          few: "You got %{count} Badge!"
+          many: "You got %{count} Бadge!"
+          other: "You got %{count} Badge!"
+    
   gist:
     description: "Question about #{title} from Test-Guru"
+  
+  users:
+    show:
+      header: "Personal page"
+      email: "Email: "
+      badges: "Badges: "
 
   shared:
     errors:

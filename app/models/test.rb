@@ -12,8 +12,8 @@ class Test < ApplicationRecord
   scope :level, -> level { where(level: level) }
   scope :by_category, -> name { joins(:category).where(categories: {title: name}) }
 
-  scope :passed, ->(user_id) { joins(:test_passages).
-    where('test_passages.passed = ? AND test_passages.user_id = ?', true, user_id) }
+  scope :passed, ->(user) { joins(:test_passages).
+    where(test_passages: { passed: true, user: user })}
 
   validates :title, presence: true, uniqueness: { scope: :level }
   validates :level, numericality: { greater_than_or_equal_to: 0, only_integer: true }

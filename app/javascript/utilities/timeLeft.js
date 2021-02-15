@@ -1,13 +1,14 @@
 document.addEventListener('turbolinks:load', function () {
-    var content = document.querySelector('#timeLeft');
+    const content = document.querySelector('#timeLeft');
     n = parseInt(document.querySelector('.remaining').textContent) 
 
     if (content) timeLeft(n)
 });
 
 function timeLeft(duration) {
-	var content = document.querySelector('#timeLeft');
-    var timer = duration, minutes, seconds;
+    
+	let content = document.querySelector('#timeLeft');
+    let timer = duration, minutes, seconds;
     setInterval(function () {
         minutes = parseInt(timer / 60, 10);
         seconds = parseInt(timer % 60, 10);

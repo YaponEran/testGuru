@@ -6,14 +6,14 @@ class Badge < ApplicationRecord
   validates :octicon, presence: true, uniqueness: { scope: :color }
   validate :validate_rule_value
 
-  OCTICONS = %w(file-code flame heart mortar-board pulse rocket ruby)
-  COLORS =  %w(black white red blue green yellow)
-  RULES =  %w(all_by_category all_tests first_try all_by_level)
+  OCTICONS = %w(file-code flame heart mortar-board pulse rocket ruby).freeze
+  COLORS =  %w(black white red blue green yellow).freeze
+  RULES =  %w(all_by_category all_tests first_try all_by_level).freeze
 
   private
 
   def validate_rule_value
-    send("validate_#{rule}") if rule != "all_tests"
+    send("validate_#{rule}"  ) if rule != "all_tests"
   end
 
   def validate_all_by_category
