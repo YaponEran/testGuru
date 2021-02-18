@@ -45,14 +45,6 @@ function defaultSetup(){
               defaultSetup()
       }
   }
-
-  function ruleValueSelectorChange() {
-    (this.value == "first_try") ? firstTry() : 
-    (this.value == "all_by_category") ? allByCategory(): 
-    (this.value == "all_by_level") ? allByLevel() : 
-    defaultSetup()
-  }
-
   
   function valueShow(c0, c1, c2, e=false) {
 

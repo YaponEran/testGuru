@@ -1,8 +1,8 @@
 document.addEventListener('turbolinks:load', function () {
     const content = document.querySelector('#timeLeft');
-    n = parseInt(document.querySelector('.remaining').textContent) 
+    const n = document.querySelector('.remaining').textContent
 
-    if (content) timeLeft(n)
+    if(content) timeLeft(n)
 });
 
 function timeLeft(duration) {
