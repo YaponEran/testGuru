@@ -1,25 +1,17 @@
 document.addEventListener('turbolinks:load', function () {
-    const content = document.querySelector('#timeLeft');
-    const n = document.querySelector('.remaining').textContent
 
-    if(content) timeLeft(n)
+    var timer = document.querySelector('.timer')
+    if (timer) {
+        var timeLeft = timer.dataset.timer
+
+        setInterval(function () {
+            timeLeft ? timeLeft-- : document.querySelector('form').submit()
+            changeTimer(timeLeft, timer)
+        }, 1000)
+    }
 });
 
-function timeLeft(duration) {
-    
-	let content = document.querySelector('#timeLeft');
-    let timer = duration, minutes, seconds;
-    setInterval(function () {
-        minutes = parseInt(timer / 60, 10);
-        seconds = parseInt(timer % 60, 10);
-
-        minutes = minutes < 10 ? "0" + minutes : minutes;
-        seconds = seconds < 10 ? "0" + seconds : seconds;
-
-        content.textContent = minutes + ":" + seconds;
-
-        if (--timer < 0) {
-            timer = duration;
-        }
-    }, 1000);
+function changeTimer(timer_count, timer_obj) {
+    line = 'Time is moving '
+    timer_obj.innerHTML = (line + timer_count)
 }

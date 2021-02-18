@@ -36,8 +36,8 @@ class TestPassage < ApplicationRecord
     Time.now - created_at
   end
 
-  def time_left
-    (test.duration * 60 - time_passed).to_i
+  def time_left(test_passage)
+    test_passage.test.duration - (Time.now - test_passage.created_at).to_i if test_passage.test.duration > 0
   end
 
   private
