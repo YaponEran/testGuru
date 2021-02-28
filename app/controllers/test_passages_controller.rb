@@ -1,4 +1,5 @@
 require_relative '../helpers/badges_helper'
+require_relative '../services/badge_service'
 
 class TestPassagesController < ApplicationController
   
