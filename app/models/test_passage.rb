@@ -11,6 +11,10 @@ class TestPassage < ApplicationRecord
     current_question.nil?
   end
 
+  def empty_answers?(answer_ids)
+    answer_ids.nil?
+  end
+
   def accept!(answer_ids)
     if correct_answer?(answer_ids)
       self.correct_questions += 1
