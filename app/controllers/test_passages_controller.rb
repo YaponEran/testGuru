@@ -1,4 +1,4 @@
-require_relative '../helpers/badges_helper'
+# require_relative '../helpers/badges_helper'
 require_relative '../services/badge_service'
 
 class TestPassagesController < ApplicationController
@@ -25,9 +25,9 @@ class TestPassagesController < ApplicationController
     end
     @test_passage.accept!(params[:answer_ids])
     if @test_passage.completed?
-      badges = BadgeService.new(@test_passage).badges
+      badges = BadgeService.new(@test_passage).call
       if badges
-        flash[:notice] = helpers.badge_notification(badges)
+        flash[:notice] = "Yeag Badge added"
       end
       redirect_to result_test_passage_path(@test_passage)
     else

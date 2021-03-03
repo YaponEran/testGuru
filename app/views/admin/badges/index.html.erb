@@ -1,12 +1,21 @@
-<h1><%= t(".header")%></h1>
+<div class="row justify-content-center mt-3">
+  <div class="col col-md-4"><h1><%= t('.header') %></h1></div>
 
-<table class="table">
-  <thead>
-    <th scope="col"><%= t('.title') %></th>
-    <th scope="col"><%= t('.octicon') %></th>
-    <th scope="col"><%= t('.color') %></th>
-    <th scope="col"><%= t('.look') %></th>
-    <th colspan="2"><%= t('.actions') %></th>
-  </thead>
-    <%= render @badges %>
-</table>
+  <div class="col-12"><%= link_to t('.new_badge'), new_admin_badge_path %>
+    <%= render 'shared/errors', resource: @badge %>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th><%= t('.name') %></th>
+        <th><%= t('.image') %></th>
+        <th><%= t('.rule') %></th>
+        <th><%= t('.parameter') %></th>
+        <th colspan="3"><%= t('tests.index.actions') %></th>
+      </tr>
+      </thead>
+      <tbody>
+      <%= render @badges %>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,37 +1,10 @@
 class Badge < ApplicationRecord
-  has_and_belongs_to_many :users
 
-  validates :title, presence: true, uniqueness: true
-  validates :rule, presence: true, uniqueness: { scope: :rule_value}
-  validates :octicon, presence: true, uniqueness: { scope: :color }
-  validate :validate_rule_value
+  RULES = %w[success_category success_on_first_try success_all_level].freeze
 
-  OCTICONS = %w(file-code flame heart mortar-board pulse rocket ruby).freeze
-  COLORS =  %w(black white red blue green yellow).freeze
-  RULES =  %w(all_by_category all_tests first_try all_by_level).freeze
+  has_many :user_badges, dependent: :destroy
+  has_many :users, through: :user_badges
 
-  private
-
-  def validate_rule_value
-    send("validate_#{rule}"  ) if rule != "all_tests"
-  end
-
-  def validate_all_by_category
-    if Category.all.pluck(:id).exclude?(rule_value.to_i)
-      errors.add(:category, "Invalid category id.")
-    end
-  end
-
-  def validate_first_try
-    if Test.all.pluck(:id).exclude?(rule_value.to_i)
-      errors.add(:test, "Invalid test id.")
-    end
-  end
-
-  def validate_all_by_level
-    if Test.distinct.pluck(:level).exclude?(rule_value.to_i)
-      errors.add(:test, "Invalid test level.")
-    end
-  end
-
+  validates :name, :image, :rule, presence: true
+  validates :rule, inclusion: { in: RULES }
 end
