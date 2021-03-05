@@ -48,41 +48,41 @@ function defaultSetup(){
   
   function valueShow(c0, c1, c2, e=false) {
 
-    const v_0 = document.querySelector(c0)
-    e ?  v_0.classList.add("hide") :  v_0.classList.remove("hide") 
+    const value_0 = document.querySelector(c0)
+    e ?  value_0.classList.add("hide") :  value_0.classList.remove("hide") 
 
-    const v_1 = document.querySelector(c1)
-    v_1.classList.add("hide")
+    const value_1 = document.querySelector(c1)
+    value_1.classList.add("hide")
 
-    const v_2 = document.querySelector(c2)
-    v_2.classList.add("hide")
+    const value_2 = document.querySelector(c2)
+    value_2.classList.add("hide")
   }
   
   function setName(c0, c1, c2, e=false) {
 
-    const s_0 = document.querySelector(c0)
-    e ?  s_0.setAttribute("name", "badge[nothing]") : 
-         s_0.setAttribute("name", "badge[rule_value]")
+    const setName_0 = document.querySelector(c0)
+    e ?  setName_0.setAttribute("name", "badge[nothing]") : 
+         setName_0.setAttribute("name", "badge[rule_value]")
 
-    const s_1 = document.querySelector(c1)
-    s_1.setAttribute("name", "badge[nothing]")
+    const setName_1 = document.querySelector(c1)
+    setName_1.setAttribute("name", "badge[nothing]")
 
-    const s_3 = document.querySelector(c2)
-    s_3.setAttribute("name", "badge[nothing]")
+    const setName_3 = document.querySelector(c2)
+    setName_3.setAttribute("name", "badge[nothing]")
   
   }
   
   function labelShow(c1, c2, c3, c4, e=false) {
-    const l_0 = document.querySelector(c1)
+    const labelShow_0 = document.querySelector(c1)
 
-    e ? l_0.classList.add("hide") :  l_0.classList.remove("hide") 
+    e ? labelShow_0.classList.add("hide") :  labelShow_0.classList.remove("hide") 
 
-    const l_1 = document.querySelector(c2)
-    l_1.classList.add("hide")
+    const labelShow_1 = document.querySelector(c2)
+    labelShow_1.classList.add("hide")
 
-    const l_2 = document.querySelector(c3)
-    l_2.classList.add("hide")
+    const labelShow_2 = document.querySelector(c3)
+    labelShow_2.classList.add("hide")
 
-    const l_3 = document.querySelector(c4)
-    l_3.classList.add("hide")
+    const labelShow_3 = document.querySelector(c4)
+    labelShow_3.classList.add("hide")
   }

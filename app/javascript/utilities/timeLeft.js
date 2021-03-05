@@ -1,8 +1,8 @@
 document.addEventListener('turbolinks:load', function () {
 
-    var timer = document.querySelector('.timer')
+    const timer = document.querySelector('.timer')
     if (timer) {
-        var timeLeft = timer.dataset.timer
+        let timeLeft = timer.dataset.timer
 
         setInterval(function () {
             timeLeft ? timeLeft-- : document.querySelector('form').submit()

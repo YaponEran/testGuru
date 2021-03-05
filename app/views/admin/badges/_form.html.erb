@@ -4,9 +4,9 @@
   <div class="form-group col-5">
     <p>
       <%= form.label :rule %>
-       <%= form.select(:rule, [[t('.success_category'), category_rule],
-                              [t('.first_try'), first_try_rule],
-                              [t('.all_level'), level_rule]],
+       <%= form.select(:rule, [[t('.success_category'), Badge::RULES[0]],
+                              [t('.first_try'), Badge::RULES[1]],
+                              [t('.all_level'), Badge::RULES[2]]],
                       prompt: t('.prompt'), class: "form-select") %>
     </p>
 

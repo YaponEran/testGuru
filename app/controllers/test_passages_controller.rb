@@ -21,13 +21,14 @@ class TestPassagesController < ApplicationController
 
   def update
     if @test_passage.empty_answers?(params[:answer_ids])
-      return render :show, alert: "You did't select any answers!"
+      flash[:alert] = t(".show.empty_answer")
+      return render :show
     end
     @test_passage.accept!(params[:answer_ids])
     if @test_passage.completed?
-      badges = BadgeService.new(@test_passage).call
+      badges = BadgeService.new(@test_passage).badges
       if badges
-        flash[:notice] = "Yeag Badge added"
+        flash[:notice] = t(".show.success")
       end
       redirect_to result_test_passage_path(@test_passage)
     else

@@ -6,11 +6,17 @@ class BadgeService
     @test_passages = @user.test_passages
   end
   
-  def call
+  def badges
     # Badge.select { |badge| send("#{badge.rule}?", badge) }
     Badge.select do |badge|
-      @user.badges << badge
+      if honored?(badge)
+        @user.badges << badge
+      end
     end
+  end
+
+  def honored?(badge)
+    send "#{badge.rule}?", badge
   end
 
   private

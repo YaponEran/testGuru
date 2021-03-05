@@ -53,6 +53,8 @@ ru:
       fail: "Вы не прошли тест :("
     show:
       progress: "Прогресс"
+      empty_answer: "ты не выбрал ответ"
+      success: "вам дано награда"
     gist: 
       success: "Gist успешно сохранен! %{url}"
       failure: "Произошла ошибка во время сохранения Gist."
