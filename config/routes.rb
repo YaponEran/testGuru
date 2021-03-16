@@ -22,6 +22,8 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
+    resources :badges
+
     resources :tests do
       patch :update_inline, on: :member
       resources :questions, shallow: true, except: :index do
@@ -33,5 +35,9 @@ Rails.application.routes.draw do
 
   get 'feedbacks', to: 'feedback#new'
   post 'feedbacks', to: 'feedback#create' 
+
+  # get "users", to: "users#show"
+  get 'badges', to: 'user_badges#index'
+
 
 end

@@ -38,8 +38,21 @@ en:
         update: "Update test"
     select: "Please select"
   
+    badges_helper:
+        message:
+          one: "You got one Badge!"
+          few: "You got %{count} Badge!"
+          many: "You got %{count} Бadge!"
+          other: "You got %{count} Badge!"
+    
   gist:
     description: "Question about #{title} from Test-Guru"
+  
+  users:
+    show:
+      header: "Personal page"
+      email: "Email: "
+      badges: "Badges: "
 
   shared:
     errors:
@@ -68,6 +81,8 @@ en:
       fail: "You have failed the test :("
     show:
       progress: "Progress"
+      empty_answer: "You did't select any answers"
+      success: "вам дано награда"
     gist:
       success: "Gist was successfully created! %{url}"
       failure: "An error occured while creating Gist."
@@ -93,6 +108,35 @@ en:
     enter: 'Ok'
 
     all_tests: "All tests"
+
+    badges:
+      index:
+        header: "Список Бэйджов"
+        title: "Название"
+        octicon: "Иконка"
+        color: "Цвет"
+        look: "Вид"
+        actions: "Действия"
+      new:
+        header: "Создать Бэйдж"
+      edit:
+        header: "Изменить Бэйдж"
+      create:
+        success: "Бэйдж успешно создан!"
+        failure: "Во время сохранения Бэйджа произошла ошибка!"
+      badge:
+        delete_message: "Вы уверены что хотите удалить данный Бэйдж?"
+      form:
+        title: "Название"
+        octicon: "Иконка"
+        get_octicon: "Здесь можно выбрать иконку"
+        color: "Цвет иконки"
+        rule: "Правило"
+        all: "Прохождение всех тестов"
+        categories: "Прохождение всех тестов в категории"
+        tests: "Прохождение теста с первой попытки"
+        levels: "Прохождение всех тестов с уровнем"
+
 
     tests:
       new:
@@ -131,3 +175,5 @@ en:
     create:
       success: "feedback was successfully saved!"
       failure: "An error occured while saving your feedback!"
+  
+  

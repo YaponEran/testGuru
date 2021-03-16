@@ -11,6 +11,8 @@ require("../utilities/sorting")
 require("../utilities/progress")
 require("../utilities/formline")
 require("../utilities/passwordchecking")
+require("../utilities/badgeValue")
+require("../utilities/timeLeft")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

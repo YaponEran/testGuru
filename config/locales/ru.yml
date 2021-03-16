@@ -6,6 +6,13 @@ ru:
         create: "Создать тест"
         update: "Обновить тест"
     select: "Пожалуйста выберите"
+  
+    badges_helper:
+        message:
+          one: "Вы получили один Бэйдж!"
+          few: "Вы получили %{count} Бэйджа!"
+          many: "Вы получили %{count} Бэйджов!"
+          other: "Вы получили %{count} Бэйджа!"
 
   gist:
     description: "Вопрос про #{title} в Test-Guru"
@@ -46,6 +53,8 @@ ru:
       fail: "Вы не прошли тест :("
     show:
       progress: "Прогресс"
+      empty_answer: "ты не выбрал ответ"
+      success: "вам дано награда"
     gist: 
       success: "Gist успешно сохранен! %{url}"
       failure: "Произошла ошибка во время сохранения Gist."
@@ -74,6 +83,35 @@ ru:
     enter: 'Ok'
 
     all_tests: "Все тесты"
+
+    badges:
+      index:
+        header: "Список Бэйджов"
+        title: "Название"
+        octicon: "Иконка"
+        color: "Цвет"
+        look: "Вид"
+        actions: "Действия"
+      new:
+        header: "Создать Бэйдж"
+      edit:
+        header: "Изменить Бэйдж"
+      create:
+        success: "Бэйдж успешно создан!"
+        failure: "Во время сохранения Бэйджа произошла ошибка!"
+      badge:
+        delete_message: "Вы уверены что хотите удалить данный Бэйдж?"
+      form:
+        title: "Название"
+        octicon: "Иконка"
+        get_octicon: "Здесь можно выбрать иконку"
+        color: "Цвет иконки"
+        rule: "Правило"
+        all: "Прохождение всех тестов"
+        categories: "Прохождение всех тестов в категории"
+        tests: "Прохождение теста с первой попытки"
+        levels: "Прохождение всех тестов с уровнем"
+
 
     tests:
       new:

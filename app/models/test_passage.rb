@@ -5,10 +5,16 @@ class TestPassage < ApplicationRecord
 
   before_validation :before_validation_set_first_question, on: :create
 
+  # scope :passed, -> { where("result >= 85 ")}
+
   POINTS_TO_COMPLETE = 85
 
   def completed?
     current_question.nil?
+  end
+
+  def empty_answers?(answer_ids)
+    answer_ids.nil?
   end
 
   def accept!(answer_ids)
@@ -24,12 +30,24 @@ class TestPassage < ApplicationRecord
     correct_questions * 100 / test.questions.count
   end
 
+  def passed
+    score >= POINTS_TO_COMPLETE
+  end
+
   def passed?
     score >= POINTS_TO_COMPLETE
   end
 
   def question_index
     test.questions.index(current_question) + 1
+  end
+
+  def time_passed
+    Time.now - created_at
+  end
+
+  def time_left(test_passage)
+    test_passage.test.duration - (Time.now - test_passage.created_at).to_i if test_passage.test.duration > 0
   end
 
   private
