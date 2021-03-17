@@ -22,7 +22,7 @@ class TestPassagesController < ApplicationController
   def update
     if @test_passage.empty_answers?(params[:answer_ids])
       flash[:alert] = t(".show.empty_answer")
-      return render :show
+      return redirect_to result_test_passage_path(@test_passage)
     end
     @test_passage.accept!(params[:answer_ids])
     if @test_passage.completed?
